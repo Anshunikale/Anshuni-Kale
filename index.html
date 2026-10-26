@@ -1,0 +1,738 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anshuni Kale Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: soft editorial portfolio. Warm porcelain ground, berry accent pulled from the UN podium and Period Pact red, serif display + clean sans. Same template per experience: header, summary + numbers beside photos, then project rows. */
+:root{
+  color-scheme:light;
+  --bg:#faf7f5; --panel:#f2ebe8; --fg:#241c1f; --muted:#76686c; --line:#e6dcd8;
+  --blue:#8e3150; --blue-soft:#f5e3e8;
+  --display:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --body:"Manrope","Helvetica Neue",system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+.dark{--bg:#2b1d23; --panel:#3a2930; --fg:#fbf3f1; --muted:#c7b5b9; --line:#4e3a42; --blue:#f2a7b8; --blue-soft:#4a2e38; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:#faf7f5;color:#241c1f;font-family:var(--body);font-size:16px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#faf7f5}
+.dark,.light{background:var(--bg);color:var(--fg)}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(250,247,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e6dcd8}
+nav.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
+.brand{font-family:var(--display);font-size:22px;color:#241c1f;text-decoration:none;white-space:nowrap}
+.navlinks{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;margin-left:auto}
+.navlinks a{font-weight:500;font-size:13.5px;color:#241c1f;text-decoration:none;white-space:nowrap;padding:6px 12px;border-radius:20px}
+.navlinks a:hover{background:#f2ebe8}
+
+.hero{padding-block:64px 40px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,104px);line-height:.95;letter-spacing:-.01em;margin:14px 0 18px}
+.hero h1 em{color:var(--blue)}
+.hero .sub{font-size:18px;color:var(--fg);max-width:46ch;margin:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{font-weight:600;font-size:14px;padding:12px 22px;border-radius:30px;text-decoration:none}
+.btn.primary{background:#8e3150;color:#fff}
+.btn.ghost{background:transparent;color:#241c1f;border:1px solid #d9ccc8}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:22px}
+.portrait{position:relative;margin:0;justify-self:end;width:min(380px,100%)}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:200px 200px 18px 18px}
+.portrait .badge{position:absolute;left:-14px;bottom:26px;background:#fff;color:#241c1f;border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 8px 24px rgba(60,30,40,.12)}
+.portrait .badge b{display:block;font-family:var(--display);font-weight:400;font-size:22px;color:#8e3150;line-height:1.1}
+
+.overview{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-block:24px 8px}
+.ov{display:block;background:var(--panel);border-radius:16px;padding:18px 18px 16px;text-decoration:none;color:var(--fg);transition:transform .2s,background .2s}
+.ov:hover{background:#ecdfdb;transform:translateY(-2px)}
+.ov .co{font-size:13px;font-weight:600}
+.ov .v{font-family:var(--display);font-size:38px;line-height:1.05;margin-top:8px;color:var(--blue);font-variant-numeric:tabular-nums}
+.ov .k{font-size:13px;color:var(--muted)}
+.ov .go{display:none}
+
+section.xp{padding-block:76px;border-top:1px solid var(--line)}
+.xp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(38px,5.5vw,56px);line-height:1;margin:0;letter-spacing:-.005em}
+.role{font-weight:600;font-size:15px;margin-top:10px}
+.when{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.summary{font-size:19px;max-width:60ch;margin:20px 0 0;line-height:1.55}
+.lead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:center;margin-top:8px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);margin:28px 0 8px;border-top:1px solid var(--line)}
+.nums>div{padding:16px 14px 0 0}
+.nums>div+div{padding-left:14px;border-left:1px solid var(--line)}
+.nums .v{font-family:var(--display);font-size:36px;line-height:1.05;color:var(--blue);font-variant-numeric:tabular-nums}
+.nums .k{font-size:13px;color:var(--muted);margin-top:4px}
+
+.ph{margin:0}
+.ph img{display:block;width:100%;object-fit:cover;border-radius:18px}
+.ph.tall img{aspect-ratio:4/5}
+.ph figcaption{font-size:12.5px;color:var(--muted);margin-top:8px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair img{aspect-ratio:3/5}
+.gallery{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:12px;margin-top:34px}
+.gallery img{height:340px}
+
+.proj{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;padding-block:36px;border-bottom:1px solid var(--line);align-items:center}
+.proj:last-child{border-bottom:0}
+.proj h3{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1;margin:0 0 16px;text-wrap:balance}
+.pdr{display:grid;gap:12px;margin:0}
+.pdr div{display:grid;grid-template-columns:96px 1fr;gap:12px}
+.pdr dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.pdr dd{margin:0;font-size:15px;min-width:0}
+.pdr .res dd{font-weight:600}
+.pdr .res dt{color:var(--blue)}
+
+.fig{background:var(--panel);border-radius:16px;padding:18px;overflow-x:auto}
+.fig svg{display:block;width:100%;height:auto;min-width:440px}
+.cap{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+svg text{font-family:var(--body);fill:var(--fg)}
+svg .sm{font-size:11px;fill:var(--muted)}
+svg .b{fill:var(--bg);stroke:var(--line);stroke-width:1.2}
+svg .hl{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1.5}
+svg .hlt{fill:var(--blue)}
+svg .w{stroke:var(--muted);stroke-width:1.3;fill:none}
+svg .wb{stroke:var(--blue);stroke-width:1.6;fill:none}
+svg .dash{stroke-dasharray:4 4}
+svg .ah{fill:var(--muted)} svg .ahb{fill:var(--blue)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+.step{background:var(--panel);border-radius:16px;padding:18px}
+.step .n{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em}
+.step h4{font-family:var(--display);font-weight:400;font-size:22px;margin:6px 0 6px;line-height:1.1}
+.step p{font-size:14px;margin:0}
+.step .fact{font-family:var(--mono);font-size:12.5px;color:var(--blue);margin-top:10px}
+
+section.model-band{padding-block:76px}
+.model-band .eyebrow{color:var(--blue)}
+.model{display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;background:var(--panel);border-radius:20px;padding:28px;margin-top:28px}
+.ctrl{display:grid;gap:14px;align-content:start}
+.ctrl label{display:flex;justify-content:space-between;font-size:14px;gap:10px}
+.ctrl output{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--blue)}
+.ctrl input{width:100%;accent-color:#f2a7b8}
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:96px 1fr 56px;gap:12px;align-items:center;font-size:14px}
+.track{height:16px;background:var(--bg);border-radius:9px;overflow:hidden}
+.fill{height:100%;background:var(--muted);border-radius:9px;transition:width .35s}
+.fill.hi{background:var(--blue)}
+.bar-row .num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.out{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;border-top:1px solid var(--line)}
+.out>div{padding:14px 14px 0 0}
+.out>div+div{padding-left:14px;border-left:1px solid var(--line)}
+.out .v{font-family:var(--display);font-size:36px;color:var(--blue);font-variant-numeric:tabular-nums}
+.out .k{font-size:13px;color:var(--muted)}
+.warn{color:#ffb3c1;font-size:14px;margin:10px 0 0}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+
+.rows{margin-top:24px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.row .org{font-weight:600;font-size:15px}
+.row .org span{display:block;font-family:var(--mono);font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.row p{margin:0;font-size:15px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:30px}
+.cols h3{font-family:var(--display);font-weight:400;font-size:26px;margin:0 0 10px}
+.cols p,.cols li{font-size:15px}
+.cols ul{margin:0;padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:5px 11px;background:var(--panel);border-radius:20px}
+footer{padding-block:64px 76px;text-align:center;border-top:1px solid var(--line)}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;margin-top:16px}
+.copy{font-family:var(--mono);font-size:12px;padding:7px 14px;border:0;background:var(--panel);color:var(--fg);border-radius:20px;cursor:pointer}
+
+@media (max-width:860px){
+  .hero-grid,.lead{grid-template-columns:minmax(0,1fr);gap:28px}
+  .portrait{justify-self:start}
+  .overview{grid-template-columns:1fr 1fr}
+  .proj{grid-template-columns:minmax(0,1fr);gap:20px}
+  .steps{grid-template-columns:1fr 1fr}
+  .model{grid-template-columns:1fr;padding:18px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .cols{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery figure:nth-child(2){grid-column:1/-1;order:-1}
+  .gallery img{height:260px}
+}
+@media (max-width:520px){
+  .nums{grid-template-columns:1fr}
+  .nums>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:12px}
+  .steps{grid-template-columns:1fr}
+  .pdr div{grid-template-columns:1fr;gap:2px}
+  .portrait .badge{left:10px}
+}
+
+/* stat band + detail cards */
+.statband{padding-block:60px}
+.statband .eyebrow{color:var(--blue)}
+.statband h2{margin-top:10px}
+.sb{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px}
+.sb>div{padding:20px 20px 22px 0;border-top:1px solid var(--line)}
+.sb>div:nth-child(4n+2),.sb>div:nth-child(4n+3),.sb>div:nth-child(4n+4){padding-left:20px;border-left:1px solid var(--line)}
+.sb .v{font-family:var(--display);font-size:clamp(40px,5vw,56px);line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
+.sb .k{font-size:13.5px;color:var(--muted);margin-top:8px;max-width:22ch}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-block:8px 34px}
+.duo>*{min-width:0}
+.card{background:var(--panel);border-radius:16px;padding:22px}
+.card h4{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.1;margin:0 0 6px}
+.card .k2{font-size:14px;color:var(--muted);margin:0 0 14px}
+.card .fig{padding:0;background:transparent;border-radius:0}
+.card .fig svg{min-width:0}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 0}
+.mini>div{background:var(--bg);border-radius:12px;padding:12px}
+.mini .v{font-family:var(--display);font-size:28px;line-height:1;color:var(--blue)}
+.mini .k{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
+.kv{display:grid;grid-template-columns:1fr auto;gap:6px 16px;font-size:14px;margin:14px 0 0}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--fg)}
+.tblwrap{overflow-x:auto;margin:0 0 34px}
+table.tbl{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+.tbl th{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding:10px 12px}
+.tbl td{border-bottom:1px solid var(--line);padding:14px 12px;vertical-align:top}
+.tbl td.big{font-family:var(--display);font-size:24px;color:var(--blue);white-space:nowrap}
+.biz{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--blue-soft);border-radius:18px;padding:26px;margin-top:22px}
+.biz .mini>div{background:var(--bg)}
+@media (max-width:860px){.sb{grid-template-columns:1fr 1fr}.sb>div:nth-child(n){padding-left:0;border-left:0}.sb>div:nth-child(2n){padding-left:20px;border-left:1px solid var(--line)}.duo,.biz{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.mini{grid-template-columns:1fr}}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.trio img{aspect-ratio:3/4.4}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ahb"/></marker>
+  </defs>
+</svg>
+
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top">Anshuni Kale</a>
+  <div class="navlinks">
+    <a href="#emerson">Emerson</a><a href="#lhr">Longhorn Racing</a><a href="#periodpact">Period Pact</a><a href="#aiche">AIChE</a><a href="#drs">R&amp;D</a><a href="#more">About</a><a href="Anshuni_Kale_Resume.pdf" target="_blank" rel="noopener" style="background:#8e3150;color:#fff">Résumé</a>
+  </div>
+</div></nav>
+
+<header class="hero light" id="top"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Engineering · Operations · Strategy</div>
+    <h1>Anshuni <em>Kale</em></h1>
+    <p class="sub">Chemical engineering and business student at UT Austin. I build carbon-fiber parts, value models, and systems that turn engineering work into results people can measure.</p>
+    <div class="btns"><a class="btn primary" href="#emerson">See the work</a><a class="btn ghost" href="Anshuni_Kale_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
+    <div class="meta">UT Austin · Class of 2028 · Austin, TX</div>
+  </div>
+  <figure class="portrait"><img src="img/headshot.jpg" alt="Headshot of Anshuni Kale"><div class="badge"><b>1 of 5</b>global leaders, UN Impact Award</div></figure>
+</div></header>
+
+<main class="light">
+<div class="wrap overview">
+  <a class="ov" href="#emerson"><div class="co">Emerson</div><div class="v">2</div><div class="k">value calculators</div><div class="go">View ↓</div></a>
+  <a class="ov" href="#lhr"><div class="co">Longhorn Racing</div><div class="v">$100K+</div><div class="k">funding raised</div><div class="go">View ↓</div></a>
+  <a class="ov" href="#periodpact"><div class="co">Period Pact</div><div class="v">~10×</div><div class="k">faster delivery</div><div class="go">View ↓</div></a>
+  <a class="ov" href="#drs"><div class="co">R&amp;D Case Study</div><div class="v">$25K</div><div class="k">testing cost saved</div><div class="go">View ↓</div></a>
+</div>
+</main>
+
+<section class="statband dark"><div class="wrap">
+  <div class="eyebrow">By the numbers</div>
+  <h2>Impact so far</h2>
+  <div class="sb">
+    <div><div class="v">$100K+</div><div class="k">raised for Longhorn Racing, incl. a Chevron sponsorship</div></div>
+    <div><div class="v">$2M+</div><div class="k">in period products distributed</div></div>
+    <div><div class="v">150+</div><div class="k">schools supplied through Period Pact</div></div>
+    <div><div class="v">~10×</div><div class="k">faster request-to-product after my app</div></div>
+    <div><div class="v">105 hrs</div><div class="k">of testing time saved with simulation-first R&amp;D</div></div>
+    <div><div class="v">$25K</div><div class="k">in labor and material saved</div></div>
+    <div><div class="v">1,000+</div><div class="k">stakeholders addressed at UN Headquarters</div></div>
+    <div><div class="v">2×</div><div class="k">NCWIT National Impact Award</div></div>
+  </div>
+</div></section>
+
+<main class="light">
+<!-- EMERSON -->
+<section class="xp" id="emerson"><div class="wrap">
+  <div class="xp-head"><div><h2>Emerson</h2><div class="role">Engineering Sales Analyst</div></div><div class="when">Austin, TX · May – Aug 2026</div></div>
+  <div class="lead"><div><p class="summary">I turned DeltaV automation features into dollar figures a sales rep can defend, and made the method reusable for the next product.</p>
+  <div class="nums">
+    <div><div class="v">10%</div><div class="k">projected increase in product sales</div></div>
+    <div><div class="v">2</div><div class="k">ROI models built and presented</div></div>
+    <div><div class="v">VPs</div><div class="k">presented both to Emerson leadership</div></div>
+  </div></div>
+  <figure class="ph tall"><img src="img/emerson.jpg" alt="Anshuni outside the Emerson Innovation Center, Process Systems and Solutions" style="object-position:50% 40%"><figcaption>Emerson Innovation Center, Process Systems &amp; Solutions</figcaption></figure></div>
+
+  <div class="proj">
+    <div>
+      <h3>Value calculators for DeltaV Edge and Live Premium</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>Product claims like "cut integration time 75%" had no dollar value attached, and most partners had no data to add.</dd></div>
+        <div><dt>What I did</dt><dd>Rewrote every claim as a quantified value statement, then built Excel calculators that scale to plant size and pull site inputs automatically.</dd></div>
+        <div class="res"><dt>Result</dt><dd>Plant-level business cases projected to drive a 10% increase in product sales, also built into an AI-powered Power BI dashboard so sales can self-serve pricing.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 150" role="img" aria-label="Value claim to annual dollar value in five steps">
+        <rect x="4" y="40" width="96" height="60" rx="6" class="b"/><text x="52" y="66" text-anchor="middle" font-size="13" font-weight="500">Claim</text><text x="52" y="84" text-anchor="middle" class="sm">from PM deck</text>
+        <rect x="118" y="40" width="96" height="60" rx="6" class="b"/><text x="166" y="66" text-anchor="middle" font-size="13" font-weight="500">Persona</text><text x="166" y="84" text-anchor="middle" class="sm">who saves</text>
+        <rect x="232" y="40" width="96" height="60" rx="6" class="b"/><text x="280" y="66" text-anchor="middle" font-size="13" font-weight="500">Inputs</text><text x="280" y="84" text-anchor="middle" class="sm">site + sourced</text>
+        <rect x="346" y="40" width="96" height="60" rx="6" class="b"/><text x="394" y="66" text-anchor="middle" font-size="13" font-weight="500">Math</text><text x="394" y="84" text-anchor="middle" class="sm">hrs × rate</text>
+        <rect x="460" y="34" width="96" height="72" rx="6" class="hl"/><text x="508" y="68" text-anchor="middle" font-size="18" font-weight="700" class="hlt">$ / yr</text><text x="508" y="88" text-anchor="middle" class="sm">per customer</text>
+        <line x1="100" y1="70" x2="116" y2="70" class="w" marker-end="url(#a)"/><line x1="214" y1="70" x2="230" y2="70" class="w" marker-end="url(#a)"/><line x1="328" y1="70" x2="344" y2="70" class="w" marker-end="url(#a)"/><line x1="442" y1="70" x2="458" y2="70" class="wb" marker-end="url(#ab)"/>
+        <text x="4" y="134" class="sm">e.g. integration hours saved × loaded engineering rate = annual value</text>
+      </svg></div>
+      <div class="cap">How every value claim becomes a number</div>
+    </div>
+  </div>
+
+  <div class="duo">
+    <div class="card">
+      <h4>Inside the Edge calculator</h4>
+      <p class="k2">Five product claims, each routed to the lever it moves</p>
+      <div class="fig"><svg viewBox="0 0 520 250" role="img" aria-label="Five DeltaV Edge claims mapped to three value levers">
+        <rect x="0" y="6" width="250" height="34" rx="8" class="b"/><text x="12" y="28" font-size="12">Integration time cut up to 75%</text>
+        <rect x="0" y="52" width="250" height="34" rx="8" class="b"/><text x="12" y="74" font-size="12">Analytics + apps at the edge</text>
+        <rect x="0" y="98" width="250" height="34" rx="8" class="b"/><text x="12" y="120" font-size="12">No manual hierarchy rebuilds</text>
+        <rect x="0" y="144" width="250" height="34" rx="8" class="b"/><text x="12" y="166" font-size="12">300k parameters, 1 yr cached data</text>
+        <rect x="0" y="190" width="250" height="34" rx="8" class="b"/><text x="12" y="212" font-size="12">Read-only one-way data flow</text>
+        <rect x="320" y="16" width="200" height="52" rx="10" class="hl"/><text x="334" y="38" font-size="12.5" font-weight="600">Engineering labor</text><text x="334" y="56" class="sm">hours × loaded rate</text>
+        <rect x="320" y="96" width="200" height="52" rx="10" class="hl"/><text x="334" y="118" font-size="12.5" font-weight="600">Downtime + decisions</text><text x="334" y="136" class="sm">hours × $ / hour</text>
+        <rect x="320" y="176" width="200" height="52" rx="10" class="hl"/><text x="334" y="198" font-size="12.5" font-weight="600">Cyber risk avoided</text><text x="334" y="216" class="sm">probability × cost</text>
+        <path d="M250 23 C 290 23,285 38,318 38" class="w"/><path d="M250 115 C 290 115,285 46,318 46" class="w"/>
+        <path d="M250 69 C 290 69,285 118,318 118" class="w"/><path d="M250 161 C 290 161,285 128,318 128" class="w"/>
+        <path d="M250 207 C 290 207,285 202,318 202" class="w"/>
+      </svg></div>
+    </div>
+    <div class="card">
+      <h4>Inside the Live Premium calculator</h4>
+      <p class="k2">Industry anchors the model rescales to each customer's plant</p>
+      <div class="bars">
+        <p class="lbl" style="margin:0">Abnormal situations handled successfully</p>
+        <div class="bar-row"><span>Baseline</span><div class="track" style="background:var(--bg)"><div class="fill" style="width:70%"></div></div><span class="num">70%</span></div>
+        <div class="bar-row"><span>Better HMI</span><div class="track" style="background:var(--bg)"><div class="fill hi" style="width:96%"></div></div><span class="num">96%</span></div>
+      </div>
+      <div class="mini">
+        <div><div class="v">~$80M</div><div class="k">cost of one major incident</div></div>
+        <div><div class="v">26–40%</div><div class="k">of incidents tied to operator error</div></div>
+        <div><div class="v">~$800K</div><div class="k">per year, per ethylene plant</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div>
+      <h3>One reusable framework for every product</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>One-off calculators get rebuilt from scratch for each product and can't be defended once their author leaves.</dd></div>
+        <div><dt>What I did</dt><dd>Built both calculators on the same five-sheet structure and tagged every input with its source and how solid it is.</dd></div>
+        <div class="res"><dt>Result</dt><dd>A new product or account plugs into the same model without a rebuild.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 220" role="img" aria-label="Inputs and reference bands feed the calculator, which feeds the summary; sources documents everything">
+        <rect x="4" y="20" width="130" height="120" rx="6" class="b"/><text x="18" y="44" font-size="13" font-weight="500">Inputs</text>
+        <text x="18" y="70" class="sm">Tier 1 · required</text><text x="18" y="92" class="sm">Tier 2 · site detail</text><text x="18" y="114" class="sm">Tier 3 · advanced</text>
+        <rect x="174" y="20" width="140" height="52" rx="6" class="b"/><text x="188" y="42" font-size="13" font-weight="500">Reference</text><text x="188" y="60" class="sm">plant size, region</text>
+        <rect x="174" y="88" width="140" height="52" rx="6" class="b"/><text x="188" y="110" font-size="13" font-weight="500">Calculator</text><text x="188" y="128" class="sm">one row per claim</text>
+        <rect x="354" y="44" width="200" height="72" rx="6" class="hl"/><text x="370" y="70" font-size="13" font-weight="500">Summary</text><text x="370" y="96" font-size="18" font-weight="700" class="hlt">$X / yr</text>
+        <rect x="4" y="170" width="550" height="38" rx="6" class="b dash"/><text x="18" y="194" font-size="13" font-weight="500">Sources</text><text x="88" y="194" class="sm">every input: where it came from · customer, benchmark, or assumption</text>
+        <line x1="134" y1="60" x2="172" y2="48" class="w" marker-end="url(#a)"/><line x1="134" y1="100" x2="172" y2="112" class="w" marker-end="url(#a)"/>
+        <line x1="244" y1="72" x2="244" y2="86" class="w" marker-end="url(#a)"/>
+        <line x1="314" y1="112" x2="352" y2="96" class="wb" marker-end="url(#ab)"/>
+      </svg></div>
+      <div class="cap">Same five sheets for every product</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div>
+      <h3>Customer story video series</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>Sales needed proof that subscription offerings win deals, and many partners were slow to respond.</dd></div>
+        <div><dt>What I did</dt><dd>Kept chasing until every product had an interview, asked all of them the same five questions, and built cut sheets and slides for each video.</dd></div>
+        <div class="res"><dt>Result</dt><dd>VPs asked to see the series and added it to next quarter's plans.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 130" role="img" aria-label="Interview to five questions to cut sheet to finished video">
+        <rect x="4" y="30" width="118" height="60" rx="6" class="b"/><text x="63" y="56" text-anchor="middle" font-size="13" font-weight="500">Interview</text><text x="63" y="74" text-anchor="middle" class="sm">sales / partner</text>
+        <rect x="148" y="30" width="118" height="60" rx="6" class="b"/><text x="207" y="56" text-anchor="middle" font-size="13" font-weight="500">5 questions</text><text x="207" y="74" text-anchor="middle" class="sm">same every time</text>
+        <rect x="292" y="30" width="118" height="60" rx="6" class="b"/><text x="351" y="56" text-anchor="middle" font-size="13" font-weight="500">Cut sheet</text><text x="351" y="74" text-anchor="middle" class="sm">+ slides</text>
+        <rect x="436" y="30" width="118" height="60" rx="6" class="hl"/><text x="495" y="56" text-anchor="middle" font-size="13" font-weight="600" class="hlt">Story video</text><text x="495" y="74" text-anchor="middle" class="sm">to VPs</text>
+        <line x1="122" y1="60" x2="146" y2="60" class="w" marker-end="url(#a)"/><line x1="266" y1="60" x2="290" y2="60" class="w" marker-end="url(#a)"/><line x1="410" y1="60" x2="434" y2="60" class="wb" marker-end="url(#ab)"/>
+        <text x="4" y="118" class="sm">e.g. one startup's pilot doubled from 48 to 96 IO and saved ~$2M versus a competitor</text>
+      </svg></div>
+      <div class="cap">Production process, repeated for 3 stories</div>
+    </div>
+  </div>
+
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>Customer story</th><th>Product</th><th>Headline number</th><th>What it proves</th></tr></thead>
+    <tbody>
+      <tr><td>Rare-earth-free magnet startup</td><td>DeltaV Flex / PK Flex</td><td class="big">~$2M</td><td>Pilot doubled from 48 to 96 IO, with savings versus a competing system</td></tr>
+      <tr><td>Cell &amp; gene therapy startup</td><td>DeltaV Flex / PK Flex</td><td class="big">$48K vs $100K</td><td>Year-one build plus subscription beat buying outright; renewed for 2 years</td></tr>
+      <tr><td>Impact-partner rollout</td><td>DeltaV Live Premium</td><td class="big">5 sections</td><td>How partners position subscription and pick the right next customer</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<!-- LHR -->
+<section class="xp" id="lhr"><div class="wrap">
+  <div class="xp-head"><div><h2>Longhorn Racing</h2><div class="role">Business Operations Lead · Composites Engineer</div></div><div class="when">UT Austin Formula SAE · Aug 2024 – Present</div></div>
+  <div class="lead"><div><p class="summary">I run the combustion team's funding and supply chain, and I build the carbon-fiber parts that material becomes.</p>
+  <div class="nums">
+    <div><div class="v">$100K+</div><div class="k">program-wide funding</div></div>
+    <div><div class="v">20+</div><div class="k">corporate touchpoints and negotiations</div></div>
+    <div><div class="v">+20</div><div class="k">places gained in competition finish</div></div>
+  </div></div>
+  <div><div class="pair"><figure class="ph"><img src="img/lhr-chevron.jpg" alt="Anshuni with teammates and the Chevron-sponsored Longhorn Racing car" style="object-position:30% 50%"></figure><figure class="ph"><img src="img/lhr-launch.jpg" alt="Anshuni at a Longhorn Racing car launch"></figure></div><div class="cap">The Chevron-sponsored combustion car and a team car launch</div></div></div>
+
+  <div class="proj">
+    <div>
+      <h3>Funding, purchasing, and BOM</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>A student team runs on sponsor money and has to have material in the shop before the build schedule needs it.</dd></div>
+        <div><dt>What I did</dt><dd>Led corporate outreach and sponsor negotiations, and own purchasing, inventory, BOM accuracy, and procurement timelines.</dd></div>
+        <div class="res"><dt>Result</dt><dd>Secured Chevron and $100K+ in funding, with the BOM matched to what the shop actually uses.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 120" role="img" aria-label="Sponsors to funding to BOM to procurement to composites shop">
+        <rect x="4" y="30" width="96" height="56" rx="6" class="b"/><text x="52" y="55" text-anchor="middle" font-size="13" font-weight="500">Sponsors</text><text x="52" y="72" text-anchor="middle" class="sm">Chevron +</text>
+        <rect x="118" y="30" width="96" height="56" rx="6" class="b"/><text x="166" y="55" text-anchor="middle" font-size="13" font-weight="500">$100K+</text><text x="166" y="72" text-anchor="middle" class="sm">budget</text>
+        <rect x="232" y="30" width="96" height="56" rx="6" class="b"/><text x="280" y="55" text-anchor="middle" font-size="13" font-weight="500">BOM</text><text x="280" y="72" text-anchor="middle" class="sm">+ inventory</text>
+        <rect x="346" y="30" width="96" height="56" rx="6" class="b"/><text x="394" y="55" text-anchor="middle" font-size="13" font-weight="500">Purchasing</text><text x="394" y="72" text-anchor="middle" class="sm">on schedule</text>
+        <rect x="460" y="30" width="96" height="56" rx="6" class="hl"/><text x="508" y="55" text-anchor="middle" font-size="13" font-weight="600" class="hlt">Parts</text><text x="508" y="72" text-anchor="middle" class="sm">on the car</text>
+        <line x1="100" y1="58" x2="116" y2="58" class="w" marker-end="url(#a)"/><line x1="214" y1="58" x2="230" y2="58" class="w" marker-end="url(#a)"/><line x1="328" y1="58" x2="344" y2="58" class="w" marker-end="url(#a)"/><line x1="442" y1="58" x2="458" y2="58" class="wb" marker-end="url(#ab)"/>
+      </svg></div>
+      <div class="cap">From sponsor dollars to finished parts</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div>
+      <h3>Composite design and fabrication</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>The undertray had to meet structural targets without overspending on carbon fiber, and new members built parts inconsistently.</dd></div>
+        <div><dt>What I did</dt><dd>Ran FEA to place plies only where load peaks, and wrote the team's resin infusion procedure.</dd></div>
+        <div class="res"><dt>Result</dt><dd>Layups that meet requirements within cost, one standard every new member builds from, and a finish that improved 20 places.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 140" role="img" aria-label="CAD, FEA, layup, cure, part">
+        <rect x="4" y="30" width="96" height="56" rx="6" class="b"/><text x="52" y="55" text-anchor="middle" font-size="13" font-weight="500">CAD</text><text x="52" y="72" text-anchor="middle" class="sm">SolidWorks</text>
+        <rect x="118" y="30" width="96" height="56" rx="6" class="b"/><text x="166" y="55" text-anchor="middle" font-size="13" font-weight="500">FEA</text><text x="166" y="72" text-anchor="middle" class="sm">ply schedule</text>
+        <rect x="232" y="30" width="96" height="56" rx="6" class="b"/><text x="280" y="55" text-anchor="middle" font-size="13" font-weight="500">Layup</text><text x="280" y="72" text-anchor="middle" class="sm">prepreg / VARI</text>
+        <rect x="346" y="30" width="96" height="56" rx="6" class="b"/><text x="394" y="55" text-anchor="middle" font-size="13" font-weight="500">Cure</text><text x="394" y="72" text-anchor="middle" class="sm">oven / autoclave</text>
+        <rect x="460" y="30" width="96" height="56" rx="6" class="hl"/><text x="508" y="55" text-anchor="middle" font-size="13" font-weight="600" class="hlt">Part</text><text x="508" y="72" text-anchor="middle" class="sm">on the car</text>
+        <line x1="100" y1="58" x2="116" y2="58" class="w" marker-end="url(#a)"/><line x1="214" y1="58" x2="230" y2="58" class="w" marker-end="url(#a)"/><line x1="328" y1="58" x2="344" y2="58" class="w" marker-end="url(#a)"/><line x1="442" y1="58" x2="458" y2="58" class="wb" marker-end="url(#ab)"/>
+        <text x="4" y="122" class="sm">my documented resin infusion procedure covers the layup step for the whole team</text>
+      </svg></div>
+      <div class="cap">How every composite part gets built</div>
+    </div>
+  </div>
+
+  <div class="duo">
+    <div class="card">
+      <h4>Undertray ply schedule</h4>
+      <p class="k2">FEA showed where stress peaks, so extra plies go only there</p>
+      <div class="fig"><svg viewBox="0 0 420 200" role="img" aria-label="Ply schedule with local reinforcement where stress peaks">
+        <rect x="10" y="20" width="400" height="14" rx="3" style="fill:var(--fg);opacity:.8"/><text x="404" y="31" font-size="10" text-anchor="end" style="fill:var(--bg)">0°</text>
+        <rect x="10" y="37" width="400" height="14" rx="3" class="ah"/><text x="404" y="48" font-size="10" text-anchor="end" style="fill:var(--bg)">±45°</text>
+        <rect x="120" y="54" width="180" height="14" rx="3" class="hlt"/><text x="296" y="65" font-size="10" text-anchor="end" style="fill:#fff">local 0°</text>
+        <rect x="10" y="71" width="400" height="14" rx="3" class="ah"/><text x="404" y="82" font-size="10" text-anchor="end" style="fill:var(--bg)">±45°</text>
+        <rect x="10" y="88" width="400" height="14" rx="3" style="fill:var(--fg);opacity:.8"/><text x="404" y="99" font-size="10" text-anchor="end" style="fill:var(--bg)">0°</text>
+        <path d="M10 170 Q 210 112 410 170" class="wb"/>
+        <line x1="120" y1="106" x2="120" y2="150" class="w dash"/><line x1="300" y1="106" x2="300" y2="150" class="w dash"/>
+        <text x="210" y="192" text-anchor="middle" class="sm">stress along the span (from FEA)</text>
+      </svg></div>
+    </div>
+    <div class="card">
+      <h4>Resin infusion (VARI) standard</h4>
+      <p class="k2">The layup stack from the procedure I wrote for the team</p>
+      <div class="fig"><svg viewBox="0 0 420 200" role="img" aria-label="Cross-section of a vacuum-assisted resin infusion layup">
+        <path d="M30 56 Q 200 28 340 56 L 340 62 Q 200 34 30 62 Z" class="hlt"/>
+        <rect x="30" y="66" width="310" height="7" rx="2" class="ah" opacity=".6"/>
+        <rect x="30" y="76" width="310" height="6" rx="2" style="fill:var(--line)"/>
+        <rect x="30" y="85" width="310" height="22" rx="2" style="fill:var(--fg);opacity:.8"/>
+        <rect x="30" y="110" width="310" height="5" rx="2" class="ah" opacity=".4"/>
+        <rect x="16" y="118" width="338" height="20" rx="3" class="ah" opacity=".75"/>
+        <g font-size="10.5" style="font-family:var(--mono)"><text x="350" y="54" class="hlt">bag</text><text x="350" y="73">flow mesh</text><text x="350" y="84" class="sm">peel ply</text><text x="350" y="100">dry fiber</text><text x="350" y="116" class="sm">release</text><text x="360" y="132">mold</text></g>
+        <line x1="30" y1="14" x2="30" y2="52" class="wb" marker-end="url(#ab)"/><text x="38" y="20" font-size="11.5" font-weight="600" class="hlt">resin in</text>
+        <line x1="330" y1="52" x2="330" y2="14" class="w" marker-end="url(#a)"/><text x="322" y="20" text-anchor="end" font-size="11.5" font-weight="600">vacuum</text>
+        <path d="M50 96 L 310 96" class="wb dash" marker-end="url(#ab)"/>
+        <text x="185" y="170" text-anchor="middle" class="sm">resin flows through the mesh, wets the fiber,</text><text x="185" y="185" text-anchor="middle" class="sm">and is pulled toward the vacuum port</text>
+      </svg></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- PERIOD PACT -->
+<section class="xp" id="periodpact"><div class="wrap">
+  <div class="xp-head"><div><h2>Period Pact Houston</h2><div class="role">President · built the nurse request portal</div></div><div class="when">Houston, TX · 2024 – Present</div></div>
+  <div class="lead"><div><p class="summary">Our bottleneck wasn't supply, it was a spreadsheet. I redesigned the process and built an app that moves donated period products to school nurses about 10× faster.</p>
+  <div class="nums">
+    <div><div class="v">$2M+</div><div class="k">products distributed to 150+ schools</div></div>
+    <div><div class="v">~7 hrs</div><div class="k">manual work saved per week</div></div>
+    <div><div class="v">100+</div><div class="k">users tested the app</div></div>
+  </div></div>
+  <figure class="ph tall"><img src="img/un-presenting.jpg" alt="Anshuni presenting Period Pact at the United Nations" style="object-position:50% 30%"><figcaption>Presenting Period Pact at the UN International Day of Peace Youth Event</figcaption></figure></div>
+
+  <div class="proj">
+    <div>
+      <h3>Replacing the spreadsheet</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>Sorting nurse requests by priority took ~5 hours a weekend, and a request took 6+ months to become product at a school.</dd></div>
+        <div><dt>What I did</dt><dd>Built a portal where nurses request products, see status, and message us, with fair-share limits enforced automatically.</dd></div>
+        <div class="res"><dt>Result</dt><dd>~10× faster delivery, 3× distribution speed, and two NCWIT National Impact Awards.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 210" role="img" aria-label="Before: email, spreadsheet, manual sort, six months. After: portal, auto priority, distribute, ten times faster.">
+        <text x="4" y="18" class="sm">BEFORE</text>
+        <rect x="4" y="28" width="122" height="48" rx="6" class="b"/><text x="65" y="57" text-anchor="middle" font-size="13">Email request</text>
+        <rect x="148" y="28" width="122" height="48" rx="6" class="b"/><text x="209" y="57" text-anchor="middle" font-size="13">Excel sheet</text>
+        <rect x="292" y="28" width="122" height="48" rx="6" class="b"/><text x="353" y="50" text-anchor="middle" font-size="13">Manual sort</text><text x="353" y="66" text-anchor="middle" class="sm">~5 hrs</text>
+        <rect x="436" y="28" width="120" height="48" rx="6" class="b"/><text x="496" y="57" text-anchor="middle" font-size="13" font-weight="600">6+ months</text>
+        <line x1="126" y1="52" x2="146" y2="52" class="w" marker-end="url(#a)"/><line x1="270" y1="52" x2="290" y2="52" class="w" marker-end="url(#a)"/><line x1="414" y1="52" x2="434" y2="52" class="w" marker-end="url(#a)"/>
+        <text x="4" y="114" class="sm" style="fill:var(--blue)">AFTER</text>
+        <rect x="4" y="124" width="122" height="48" rx="6" class="hl"/><text x="65" y="146" text-anchor="middle" font-size="13">Portal request</text><text x="65" y="162" text-anchor="middle" class="sm">limits enforced</text>
+        <rect x="148" y="124" width="122" height="48" rx="6" class="hl"/><text x="209" y="153" text-anchor="middle" font-size="13">Auto priority</text>
+        <rect x="292" y="124" width="122" height="48" rx="6" class="hl"/><text x="353" y="153" text-anchor="middle" font-size="13">Distribute</text>
+        <rect x="436" y="124" width="120" height="48" rx="6" class="hl"/><text x="496" y="153" text-anchor="middle" font-size="14" font-weight="700" class="hlt">~10× faster</text>
+        <line x1="126" y1="148" x2="146" y2="148" class="wb" marker-end="url(#ab)"/><line x1="270" y1="148" x2="290" y2="148" class="wb" marker-end="url(#ab)"/><line x1="414" y1="148" x2="434" y2="148" class="wb" marker-end="url(#ab)"/>
+        <path d="M496 172 V196 H65 V174" class="wb dash"/><text x="280" y="190" text-anchor="middle" class="sm">live status + messages back to the nurse</text>
+      </svg></div>
+      <div class="cap">Same donations and volunteers; the process changed</div>
+    </div>
+  </div>
+
+  <div class="duo">
+    <div class="card">
+      <h4>Before vs after</h4>
+      <p class="k2">Same donations, same volunteers, new process</p>
+      <div class="bars">
+        <p class="lbl" style="margin:0">Time from request to product (relative)</p>
+        <div class="bar-row"><span>Spreadsheet</span><div class="track" style="background:var(--bg)"><div class="fill" style="width:100%"></div></div><span class="num">6+ mo</span></div>
+        <div class="bar-row"><span>Portal</span><div class="track" style="background:var(--bg)"><div class="fill hi" style="width:10%"></div></div><span class="num">~10×</span></div>
+        <p class="lbl" style="margin:14px 0 0">Distribution speed</p>
+        <div class="bar-row"><span>Spreadsheet</span><div class="track" style="background:var(--bg)"><div class="fill" style="width:33%"></div></div><span class="num">1×</span></div>
+        <div class="bar-row"><span>Portal</span><div class="track" style="background:var(--bg)"><div class="fill hi" style="width:100%"></div></div><span class="num">3×</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <h4>What the app runs on</h4>
+      <p class="k2">The pieces that replaced weekend spreadsheet sorting</p>
+      <div class="mini" style="grid-template-columns:1fr 1fr">
+        <div><div class="v">Limits</div><div class="k">fair-share caps per school, enforced automatically</div></div>
+        <div><div class="v">Status</div><div class="k">nurses see where their request is</div></div>
+        <div><div class="v">Messages</div><div class="k">direct line between nurses and the org</div></div>
+        <div><div class="v">~7 hrs</div><div class="k">of manual work saved every week</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div>
+      <h3>Policy and advocacy</h3>
+      <dl class="pdr">
+        <div><dt>What I did</dt><dd>Lobbied with Rep. Donna Howard for HB321 and HB300, organized Houston's first National Period Day Rally, and spoke at UN Headquarters as 1 of 5 Global Impact Leaders.</dd></div>
+        <div class="res"><dt>Result</dt><dd>Texas removed the tampon tax in September 2023, and new chapters started at high schools across Texas.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 110" role="img" aria-label="Timeline: founded 2020, lobbying, tax removed 2023, portal and awards">
+        <line x1="30" y1="40" x2="530" y2="40" class="w"/>
+        <circle cx="40" cy="40" r="6" class="ah"/><text x="40" y="70" text-anchor="middle" font-size="12.5" font-weight="500">2020</text><text x="40" y="88" text-anchor="middle" class="sm">founded</text>
+        <circle cx="200" cy="40" r="6" class="ah"/><text x="200" y="70" text-anchor="middle" font-size="12.5" font-weight="500">2021</text><text x="200" y="88" text-anchor="middle" class="sm">lobbying, Session 87</text>
+        <circle cx="360" cy="40" r="8" class="ahb"/><text x="360" y="70" text-anchor="middle" font-size="12.5" font-weight="600" class="hlt">Sept 2023</text><text x="360" y="88" text-anchor="middle" class="sm">tampon tax removed</text>
+        <circle cx="510" cy="40" r="6" class="ah"/><text x="510" y="70" text-anchor="middle" font-size="12.5" font-weight="500">Portal</text><text x="510" y="88" text-anchor="middle" class="sm">2× NCWIT award</text>
+      </svg></div>
+      <div class="cap">Milestones</div>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <figure class="ph"><img src="img/un-podium.jpg" alt="Anshuni at the UN podium" style="object-position:50% 45%"><figcaption>UN Headquarters, New York</figcaption></figure>
+    <figure class="ph"><img src="img/girlup-summit.jpg" alt="Anshuni speaking at the Girl Up USA Leadership Summit"><figcaption>Girl Up USA Leadership Summit talk on period poverty</figcaption></figure>
+    <figure class="ph"><img src="img/un-peaceday.jpg" alt="Anshuni at a UN delegate desk on Peace Day" style="object-position:60% 50%"><figcaption>#PeaceDay at the UN</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- AICHE -->
+<section class="xp" id="aiche"><div class="wrap">
+  <div class="xp-head"><div><h2>AIChE at UT Austin</h2><div class="role">VP Corporate · previously Social Chair</div></div><div class="when">American Institute of Chemical Engineers · 2025 – Present</div></div>
+  <div class="lead">
+    <div>
+      <p class="summary">I run the chapter's relationships with industry: planning corporate general meetings and info sessions that put chemical engineering students in a room with recruiters and engineers from the companies they want to work for.</p>
+      <div class="nums">
+        <div><div class="v">5</div><div class="k">corporate partners hosted</div></div>
+        <div><div class="v">2</div><div class="k">officer roles held</div></div>
+        <div><div class="v">VP</div><div class="k">leading all corporate relations</div></div>
+      </div>
+      <p class="lbl" style="margin-top:22px">Corporate partners I've hosted</p>
+      <div class="chips"><span class="chip">Chevron</span><span class="chip">Samsung</span><span class="chip">Shell</span><span class="chip">HDR</span><span class="chip">BP</span></div>
+      <p style="margin:22px 0 0;font-size:15px;max-width:60ch">As Social Chair I built the events that brought members back each week, which gave the chapter the turnout that sponsors look for when they decide where to recruit.</p>
+    </div>
+    <figure class="ph"><img src="img/aiche-samsung-gm.jpg" alt="AIChE officers at the Samsung general meeting" style="aspect-ratio:4/3"><figcaption>AIChE officers at our Samsung general meeting</figcaption></figure>
+  </div>
+  <div class="gallery" style="grid-template-columns:1.5fr 1fr">
+    <figure class="ph"><img src="img/aiche-samsung-visit.jpg" alt="AIChE officers with Samsung engineers"><figcaption>Hosting Samsung engineers on campus</figcaption></figure>
+    <figure class="ph"><img src="img/aiche-trio.jpg" alt="Anshuni with fellow AIChE officers"><figcaption>With fellow officers</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- R&D -->
+<section class="xp" id="drs"><div class="wrap">
+  <div class="xp-head"><div><h2>R&amp;D Case Study</h2><div class="role">Röchling Industrial Composites · R&amp;D Intern</div></div><div class="when">Cleveland, OH · May – Aug 2025</div></div>
+  <p class="summary">I tested whether ANSYS simulation could replace part of an all-physical composite testing process, using a race-car DRS wing as the test case.</p>
+  <div class="nums">
+    <div><div class="v">105 hrs</div><div class="k">saved versus all-physical testing</div></div>
+    <div><div class="v">$25K</div><div class="k">labor and material saved</div></div>
+    <div><div class="v">1st run</div><div class="k">simulation converged, no rework</div></div>
+  </div>
+
+  <div class="proj">
+    <div>
+      <h3>The idea</h3>
+      <dl class="pdr">
+        <div><dt>Problem</dt><dd>100% of material testing was physical: build, break, repeat. Every round cost labor and material.</dd></div>
+        <div><dt>What I did</dt><dd>Put simulation in the loop so physical tests only confirm what the model predicts, and test data refines the model.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="fig"><svg viewBox="0 0 560 160" role="img" aria-label="Old loop: design, build, test, repeat. New loop: design, simulate, targeted test, refine model.">
+        <text x="4" y="18" class="sm">BEFORE</text>
+        <rect x="4" y="28" width="122" height="44" rx="6" class="b"/><text x="65" y="55" text-anchor="middle" font-size="13">Design</text>
+        <rect x="148" y="28" width="122" height="44" rx="6" class="b"/><text x="209" y="55" text-anchor="middle" font-size="13">Build sample</text>
+        <rect x="292" y="28" width="122" height="44" rx="6" class="b"/><text x="353" y="55" text-anchor="middle" font-size="13">Physical test</text>
+        <rect x="436" y="28" width="120" height="44" rx="6" class="b"/><text x="496" y="55" text-anchor="middle" font-size="13">Repeat</text>
+        <line x1="126" y1="50" x2="146" y2="50" class="w" marker-end="url(#a)"/><line x1="270" y1="50" x2="290" y2="50" class="w" marker-end="url(#a)"/><line x1="414" y1="50" x2="434" y2="50" class="w" marker-end="url(#a)"/>
+        <text x="4" y="102" class="sm" style="fill:var(--blue)">AFTER</text>
+        <rect x="4" y="112" width="122" height="44" rx="6" class="b"/><text x="65" y="139" text-anchor="middle" font-size="13">Design</text>
+        <rect x="148" y="112" width="122" height="44" rx="6" class="hl"/><text x="209" y="139" text-anchor="middle" font-size="13" font-weight="600" class="hlt">ANSYS sim</text>
+        <rect x="292" y="112" width="122" height="44" rx="6" class="b"/><text x="353" y="139" text-anchor="middle" font-size="13">Targeted test</text>
+        <rect x="436" y="112" width="120" height="44" rx="6" class="b"/><text x="496" y="139" text-anchor="middle" font-size="13">Refine model</text>
+        <line x1="126" y1="134" x2="146" y2="134" class="w" marker-end="url(#a)"/><line x1="270" y1="134" x2="290" y2="134" class="wb" marker-end="url(#ab)"/><line x1="414" y1="134" x2="434" y2="134" class="w" marker-end="url(#a)"/>
+      </svg></div>
+      <div class="cap">Simulation replaces build-and-break rounds</div>
+    </div>
+  </div>
+
+  <div style="padding-block:30px 0">
+    <h3 style="font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 14px">How I ran it</h3>
+    <div class="steps">
+      <div class="step"><div class="n">STEP 1</div><h4>Calculate &amp; CAD</h4><p>Modeled a DRS wing on an inverted NACA 2408 airfoil and computed the load it sees.</p><div class="fact">21.14 N · 3,675 Pa</div></div>
+      <div class="step"><div class="n">STEP 2</div><h4>Formulate resin</h4><p>Back-calculated resin targets and fixed a thermal defect by reformulating.</p><div class="fact">+2 PHR envirospheres</div></div>
+      <div class="step"><div class="n">STEP 3</div><h4>Test properties</h4><p>Measured stiffness, shear, and thermal expansion so the model is realistic.</p><div class="fact">α = 0.335 μm/m·°C</div></div>
+      <div class="step"><div class="n">STEP 4</div><h4>Simulate</h4><p>Ran coupled structural and thermal ANSYS models; found where to reinforce.</p><div class="fact">converged on first run</div></div>
+    </div>
+  </div>
+
+  <div class="duo" style="padding-top:22px">
+    <div class="card">
+      <h4>The DRS wing</h4>
+      <p class="k2">Inverted NACA 2408 airfoil, plotted from its equations</p>
+      <div class="fig"><svg viewBox="0 0 420 190" role="img" aria-label="Inverted NACA 2408 airfoil with movable flap closed and open"><g id="naca-g"></g>
+        <text x="270" y="172" class="sm" style="fill:var(--blue)">flap open: drag ↓</text><text x="270" y="186" class="sm">flap closed: downforce ↑</text></svg></div>
+      <dl class="kv">
+        <dt>Net force, open → closed</dt><dd>21.14 N</dd>
+        <dt>Operating stress (open)</dt><dd>3,675 Pa</dd>
+        <dt>Main / movable flap depth</dt><dd>15.7″ / 13.7″</dd>
+        <dt>Speed gain target</dt><dd>10–12 km/h</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h4>Resin design window</h4>
+      <p class="k2">The formulation had to land inside both ranges</p>
+      <div class="fig"><svg viewBox="0 0 420 210" role="img" aria-label="Curing enthalpy 12 to 85 J/g; stress resistance above 3,500 Pa with operating stress 3,675 Pa">
+        <text x="0" y="16" class="sm">CURING ENTHALPY (J/g)</text>
+        <line x1="10" y1="48" x2="410" y2="48" class="w"/>
+        <rect x="50" y="38" width="290" height="20" rx="10" class="hl"/>
+        <text x="50" y="80" text-anchor="middle" font-size="11.5" style="font-family:var(--mono)">12</text><text x="340" y="80" text-anchor="middle" font-size="11.5" style="font-family:var(--mono)">85</text>
+        <text x="195" y="53" text-anchor="middle" font-size="11" font-weight="600" class="hlt">acceptable</text>
+        <text x="0" y="118" class="sm">STRESS RESISTANCE (Pa)</text>
+        <line x1="10" y1="150" x2="410" y2="150" class="w"/>
+        <rect x="160" y="140" width="250" height="20" rx="10" class="hl"/>
+        <line x1="205" y1="132" x2="205" y2="168" class="wb"/>
+        <text x="160" y="184" text-anchor="middle" font-size="11.5" style="font-family:var(--mono)">3,500 min</text>
+        <text x="236" y="200" text-anchor="middle" font-size="11.5" class="hlt" style="font-family:var(--mono)">3,675 operating</text>
+      </svg></div>
+    </div>
+  </div>
+  <div class="card">
+    <h4>Coupled simulation</h4>
+    <p class="k2">Structural and thermal models feed each other; schematic of where maximum deformation sat</p>
+    <div class="fig" style="overflow-x:auto"><svg viewBox="0 0 900 190" role="img" aria-label="Measured properties feed structural and thermal simulations, which are coupled; maximum deformation near the top core" style="min-width:620px">
+      <defs><linearGradient id="hot" x1="0" x2="1"><stop offset="0" stop-color="#f5e3e8"/><stop offset=".6" stop-color="#d77b95"/><stop offset="1" stop-color="#8e3150"/></linearGradient></defs>
+      <rect x="0" y="66" width="160" height="56" rx="10" class="b"/><text x="16" y="90" font-size="13" font-weight="500">Measured props</text><text x="16" y="108" class="sm">stiffness, shear, α</text>
+      <rect x="210" y="16" width="190" height="56" rx="10" class="b"/><text x="226" y="40" font-size="13" font-weight="500">Structural (static)</text><text x="226" y="58" class="sm">orthotropic inputs</text>
+      <rect x="210" y="116" width="190" height="56" rx="10" class="b"/><text x="226" y="140" font-size="13" font-weight="500">Thermal (transient)</text><text x="226" y="158" class="sm">heat flow over time</text>
+      <line x1="160" y1="86" x2="208" y2="48" class="w" marker-end="url(#a)"/><line x1="160" y1="102" x2="208" y2="140" class="w" marker-end="url(#a)"/>
+      <path d="M400 144 C 440 144,440 44,400 44" class="wb dash" marker-end="url(#ab)"/><text x="446" y="98" class="sm" style="fill:var(--blue)">coupled</text>
+      <path d="M520 118 Q 690 64 890 106 L 890 120 Q 690 80 520 132 Z" fill="url(#hot)"/>
+      <circle cx="712" cy="80" r="16" class="wb"/><line x1="712" y1="96" x2="712" y2="146" class="wb dash"/>
+      <text x="712" y="162" text-anchor="middle" font-size="12" font-weight="600" class="hlt">max deformation near top core (DRS open)</text>
+      <rect x="520" y="174" width="160" height="8" rx="4" fill="url(#hot)"/><text x="690" y="182" class="sm">low → high</text>
+    </svg></div>
+  </div>
+  <div class="biz">
+    <div><p class="lbl" style="color:var(--blue)">Result &amp; business case</p><p style="margin:0;font-size:16px">The simulation converged within failure limits on the first run, with no re-meshing or rework. Rolled into the broader Q3 initiative, the simulation-first approach replaced a fully physical validation cycle.</p></div>
+    <div class="mini"><div><div class="v">105 hrs</div><div class="k">saved</div></div><div><div class="v">$25K</div><div class="k">saved</div></div><div><div class="v">0</div><div class="k">re-meshes needed</div></div></div>
+  </div>
+</div></section>
+</main>
+
+
+<!-- MORE -->
+<section class="xp light" id="more"><div class="wrap">
+  <div class="lead" style="margin-top:0;align-items:center">
+    <div><h2>More About Me</h2><p class="summary">First-generation college student from Sugar Land, Texas. I speak English, Marathi, and Spanish, and when I'm not building something I'm usually playing guitar or bouldering.</p></div>
+    <div class="trio"><figure class="ph"><img src="img/portrait.jpg" alt="Anshuni playing acoustic guitar outdoors" style="object-position:50% 25%"></figure><figure class="ph"><img src="img/climb-1.jpg" alt="Anshuni bouldering, smiling from the wall" style="object-position:50% 35%"></figure><figure class="ph"><img src="img/climb-2.jpg" alt="Anshuni mid-move on a bouldering problem"></figure></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="org">Coley GCS<span>Product Manager Lead · Jan – Dec 2025</span></div><p>Led Agile sprints at an early-stage startup to ship a federal-contracting automation platform that replaced 10+ manual steps and cut review time ~70%; built pricing models and a go-to-market plan across 3 segments, projected to lift qualified leads 20%.</p></div>
+    <div class="row"><div class="org">National Instruments<span>Project Manager Intern · Aug – Dec 2025</span></div><p>Built a Power BI dashboard from 15+ customer interviews and 50+ AI test prompts; prioritized 5 AI workflows and 3 roadmap improvements with engineering.</p></div>
+    <div class="row"><div class="org">Texas UCG × Tecovas<span>Project Manager · Spring 2026</span></div><p>Led a 5-person team comparing 150 listings across 10 competitors in Excel; presented 3 assortment recommendations to Tecovas' merchandising team.</p></div>
+    <div class="row"><div class="org">Rice University<span>Process &amp; Materials Research · 2025</span></div><p>Raised usable graphene monolayer yield about 20% through exfoliation and characterization work.</p></div>
+    <div class="row"><div class="org">Longhorn Cube<span>Founder &amp; Lead · 2025 – Present</span></div><p>Started UT's first ChemE Cube team; modeled levelized cost of CO₂ capture in Excel across sorbent, scale, and throughput.</p></div>
+  </div>
+  <div class="cols">
+    <div><h3>Education</h3><p style="margin:0">The University of Texas at Austin<br>B.S. Chemical Engineering &amp; Business<br>Minor: Materials Science · Certificate: Data Science &amp; Statistics<br><span class="when">May 2028 · GPA 3.65 · University High Honors (4 semesters)</span></p><p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Coursework: finance, accounting, applied statistics, MIS, thermodynamics, transport phenomena, ChemE materials</p></div>
+    <div><h3>Skills</h3><div class="chips"><span class="chip">Excel: financial &amp; ROI modeling</span><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">SolidWorks</span><span class="chip">ANSYS / FEA</span><span class="chip">DeltaV</span><span class="chip">Composites</span><span class="chip">Business cases</span><span class="chip">Pricing analysis</span><span class="chip">Executive presentations</span></div></div>
+    <div><h3>Honors</h3><ul><li>2× NCWIT National Impact Award</li><li>UN Impact Award, 1 of 5 global leaders</li><li>1st of 120 posters, GCURS</li><li>TEX-E Fellow</li><li>AIChE VP Corporate</li></ul></div>
+  </div>
+</div></section>
+
+<footer id="contact" class="light"><div class="wrap">
+  <h2>Let's Talk</h2>
+  <div class="contact-row"><span id="em">anshuni.kale@gmail.com</span><button class="copy" id="copy-email" type="button">Copy</button><a href="https://linkedin.com/in/anshunikale" target="_blank" rel="noopener">LinkedIn</a><a href="Anshuni_Kale_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
+</div></footer>
+
+<script>
+
+(function(){
+  const g=document.getElementById('naca-g'); if(!g) return;
+  const m=.02,p=.4,t=.08,N=60,P=[],up=[],lo=[];
+  for(let i=0;i<=N;i++){const b=Math.PI*i/N,x=(1-Math.cos(b))/2;
+    const yt=5*t*(.2969*Math.sqrt(x)-.126*x-.3516*x*x+.2843*x**3-.1015*x**4);
+    const yc=x<p?m/(p*p)*(2*p*x-x*x):m/((1-p)**2)*((1-2*p)+2*p*x-x*x);
+    const th=Math.atan(x<p?2*m/(p*p)*(p-x):2*m/((1-p)**2)*(p-x));
+    up.push([x-yt*Math.sin(th),yc+yt*Math.cos(th)]);lo.push([x+yt*Math.sin(th),yc-yt*Math.cos(th)]);}
+  const pts=up.concat(lo.reverse()),ns='http://www.w3.org/2000/svg';
+  const path=(ox,oy,c,rot)=>{const r=rot*Math.PI/180;return 'M'+pts.map(([x,y])=>{y=-y;const X=x*c,Y=y*c;return (ox+X*Math.cos(r)-Y*Math.sin(r)).toFixed(1)+' '+(oy+X*Math.sin(r)+Y*Math.cos(r)).toFixed(1)}).join('L')+'Z'};
+  const add=(d,c,st)=>{const e=document.createElementNS(ns,'path');e.setAttribute('d',d);e.setAttribute('class',c);if(st)e.setAttribute('style',st);g.appendChild(e)};
+  add(path(10,70,240,8),'b','stroke:var(--fg);stroke-width:1.4');
+  add(path(240,98,150,22),'b dash');
+  add(path(240,98,150,-4),'hl');
+  const t2=(x,y,s,c)=>{const e=document.createElementNS(ns,'text');e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('class',c);e.textContent=s;g.appendChild(e)};
+  t2(40,125,'main flap','sm');t2(250,80,'movable flap','sm');
+})();
+(function(){const $=id=>document.getElementById(id);
+  $('copy-email').addEventListener('click',function(){const b=this,t=$('em').textContent;
+    const sel=()=>{const r=document.createRange();r.selectNodeContents($('em'));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+    try{navigator.clipboard.writeText(t).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}).catch(sel);}catch(e){sel();}});
+})();
+</script>
+
+</body></html>
